@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./frontend/scss/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h2>Product Add</h2>
+            <div class="action">
+                <button id="save" class="action-button" onclick="addProduct()">Save</button>
+                <button id="cancel" class="action-button">Cancel</button>
+            </div>
+        </header>
+        <form name="form" id="product_form">
+            <div class="input">
+                <span name="error" class="error hidden sku" >This field is required</span>
+                <input type="text" id="sku" name="sku" class="input-field"/>
+                <label class="input-label">SKU</label> 
+            </div>
+            <div class="input">
+                <span name="error" class="error hidden name">This field is required</span>
+                <input type="text" id="name" name="name" class="input-field"/>                
+                <label class="input-label">Name</label>  
+            </div>
+            <div class="input">
+                <span name="error" class="error hidden price">This field is required</span>
+                <input type="number" id="price" name="price" class="input-field"/>
+                <label class="input-label">Price</label>
+            </div>
+            <div class="input">
+                <span name="error" class="error hidden productType">This field is required</span>
+                <select onchange="createAttributes()" class="input-field select" name="productType" id="productType">
+                    <option value="DefaultType" selected disabled>Type Switcher</option>
+                    <option value="DVD">DVD</option>
+                    <option value="Book">Book</option>
+                    <option value="Furniture">Furniture</option>
+                  </select>      
+            </div>
+            <div id="attributes"></div>
+            <input type="hidden" name="addProduct"> 
+        </form>
+    </div>
+
+    <script src="./frontend/addProduct.script.js"></script>
+</body>
+
+</html>
